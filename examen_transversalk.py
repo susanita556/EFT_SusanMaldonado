@@ -115,3 +115,32 @@ def agregar_prenda(codigo: str, nombre: str, categoria: str, talla: str, color: 
 
 def eliminar_prenda(codigo: str, prendas_dict: dict, bodega_dict: dict) -> bool:
     if not buscar_codigo(codigo, prendas_dict ):
+        return False
+    
+    cod_eliminar = codigo.upper()
+    
+    clave_p = next(k for k in prenda_dict if k.upper() == cod_eliminar)
+    del prendas_dict[clave_p]
+
+    clave_b = next(k for k in bodega_dict if k.upper() == cod_eliminar )
+    del bodega_dict[clave_b]
+
+    return True
+
+def main():
+    prendas_dict={
+        "S001" : ["POLERA BASICA", "POLERA", "M", "NEGRO", "ALGODON", TRUE],
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
